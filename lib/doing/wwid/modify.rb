@@ -266,7 +266,7 @@ module Doing
               elapsed = done_date - item.date
 
               if max_elapsed.positive? && (elapsed > max_elapsed) && !opt[:took]
-                puts boldwhite(item.title)
+                puts Color.boldwhite(item.title)
                 human = elapsed.time_string(format: :natural)
                 res = Prompt.yn(Color.yellow("Did this actually take #{human}"), default_response: true)
                 unless res
